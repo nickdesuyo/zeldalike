@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementInput;
     private Animator animator;
     public SignalObject playerHealthSignal;
+    public VectorValue startingPosition;
 
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", -1);
+        transform.position = startingPosition.runtimeValue;
     }
 
     // Update is called once per frame
@@ -103,8 +105,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void TakeDamage(float damage)
     {
-        currentHealth.RuntimeValue -= damage;
-        if (currentHealth.RuntimeValue <= 0)
+        currentHealth.runtimeValue -= damage;
+        if (currentHealth.runtimeValue <= 0)
         {
             this.gameObject.SetActive(false);
         }

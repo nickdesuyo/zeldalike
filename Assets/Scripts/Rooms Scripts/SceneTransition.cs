@@ -5,17 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    public string SceneToLoad;
+    public string sceneToLoad;
     public Vector2 playerPosition;
     public VectorValue playerStorage;
     public GameObject fadeInPanel;
+    public GameObject fadeOutPanel;
+    public float fadeWait;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player") && !collision.isTrigger)
         {
             playerStorage.runtimeValue = playerPosition;
-            SceneManager.LoadScene(SceneToLoad);
+            StartCoroutine(FadeRoutine()); 
         }
     }
 
@@ -28,5 +30,19 @@ public class SceneTransition : MonoBehaviour
         }
     }
 
+    public IEnumerator FadeRoutine()
+    {
+        if (fadeOutPanel != null)
+        {
+            Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity);
+        }
+        yield return new WaitForSeconds(fadeWait);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneToLoad);
+        while (!asyncOperation.isDone)
+        {
+            yield return null;
+        }
+        
+    }
 
 }

@@ -6,6 +6,8 @@ using TMPro;
 
 public class ReadableObject : MonoBehaviour
 {
+    public SignalObject contextOn;
+    public SignalObject contextOff;
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
     public string dialogToBeDisplayed;
@@ -40,6 +42,7 @@ public class ReadableObject : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = true;
+            contextOn.Raise();
         }
     }
 
@@ -48,6 +51,7 @@ public class ReadableObject : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             playerInRange = false;
+            contextOff.Raise();
             dialogBox.SetActive(false);
         }
     }

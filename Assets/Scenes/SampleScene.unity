@@ -827,6 +827,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
+        type: 3}
+      propertyPath: SceneToLoad
+      value: HouseInterior
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
+        type: 3}
+      propertyPath: playerStorage
+      value: 
+      objectReference: {fileID: 11400000, guid: 274848c22ed94a642aa3379525e5bcad,
+        type: 2}
+    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
+        type: 3}
+      propertyPath: playerPosition.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
+        type: 3}
+      propertyPath: fadeInPanel
+      value: 
+      objectReference: {fileID: 426845303120161379, guid: df9f2e42582c207448d64f4987667667,
+        type: 3}
+    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
+        type: 3}
+      propertyPath: fadeOutPanel
+      value: 
+      objectReference: {fileID: 3989542215210684813, guid: c6215df2e3f3f584eb626f9d6aede7d5,
+        type: 3}
+    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
+        type: 3}
+      propertyPath: fadeWait
+      value: 0.333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
+        type: 3}
+      propertyPath: sceneToLoad
+      value: HouseInterior
+      objectReference: {fileID: 0}
     - target: {fileID: 2117331809550311895, guid: adda7097fafb67b4aaeaeac120f474b0,
         type: 3}
       propertyPath: m_Offset.y
@@ -882,28 +920,6 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
-        type: 3}
-      propertyPath: SceneToLoad
-      value: HouseInterior
-      objectReference: {fileID: 0}
-    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
-        type: 3}
-      propertyPath: playerStorage
-      value: 
-      objectReference: {fileID: 11400000, guid: 274848c22ed94a642aa3379525e5bcad,
-        type: 2}
-    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
-        type: 3}
-      propertyPath: playerPosition.y
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2688593264670114128, guid: adda7097fafb67b4aaeaeac120f474b0,
-        type: 3}
-      propertyPath: fadeInPanel
-      value: 
-      objectReference: {fileID: 426845303120161379, guid: df9f2e42582c207448d64f4987667667,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: adda7097fafb67b4aaeaeac120f474b0, type: 3}
 --- !u!1 &601923780 stripped
@@ -64669,12 +64685,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1427638529274911456, guid: a6648d5c7a52e7648b1a8660b131be5d,
-        type: 3}
-      propertyPath: startingPosition
-      value: 
-      objectReference: {fileID: 11400000, guid: 274848c22ed94a642aa3379525e5bcad,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6648d5c7a52e7648b1a8660b131be5d, type: 3}
 --- !u!1001 &2433582957395999128
@@ -64972,6 +64982,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e373b8567be024781ac96b081baaef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contextOn: {fileID: 11400000, guid: ac62e74fe48352f45945fa3e518e1b11, type: 2}
+  contextOff: {fileID: 11400000, guid: 34f7d431ca77f3b4bb3acaaea8515388, type: 2}
   dialogBox: {fileID: 1294863915}
   dialogText: {fileID: 631095391}
   dialogToBeDisplayed: "\u2191 The Blessed Pond"

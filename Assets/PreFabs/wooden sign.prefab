@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4508078143007286362}
   - component: {fileID: 4508078143007286373}
   - component: {fileID: 4508078143007286372}
+  - component: {fileID: 4508078143156585990}
   m_Layer: 0
   m_Name: wooden sign
   m_TagString: Untagged
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.49922276}
+  m_Offset: {x: 0.012562245, y: -0.28503585}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -133,5 +134,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.9984455}
+  m_Size: {x: 0.72362953, y: 1.2434525}
   m_EdgeRadius: 0
+--- !u!114 &4508078143156585990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508078143007286361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e373b8567be024781ac96b081baaef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  context: {fileID: 11400000, guid: ac62e74fe48352f45945fa3e518e1b11, type: 2}
+  dialogBox: {fileID: 0}
+  dialogText: {fileID: 0}
+  dialogToBeDisplayed: "\u2191 The Blessed Pond"
+  playerInRange: 0

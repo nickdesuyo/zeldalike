@@ -5,14 +5,18 @@ using UnityEngine;
 public class ContextClue : MonoBehaviour
 {
     public GameObject contextClue;
+    private bool contextActive = false; 
 
-    public void Enable()
+    public void ChangeContext()
     {
-        contextClue.SetActive(true);
-    }
-
-    public void Disable()
-    {
-        contextClue.SetActive(false);
+        contextActive = !contextActive;
+        if (contextActive)
+        {
+            contextClue.SetActive(true);
+        }
+        else
+        {
+            contextClue.SetActive(false);
+        }
     }
 }

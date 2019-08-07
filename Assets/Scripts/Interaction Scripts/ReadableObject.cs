@@ -4,14 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ReadableObject : MonoBehaviour
+public class ReadableObject : Interactable
 {
-    public SignalObject contextOn;
-    public SignalObject contextOff;
     public GameObject dialogBox;
     public TextMeshProUGUI dialogText;
     public string dialogToBeDisplayed;
-    public bool playerInRange;
+    
 
 
     // Start is called before the first frame update
@@ -37,21 +35,12 @@ public class ReadableObject : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            playerInRange = true;
-            contextOn.Raise();
-        }
-    }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !collision.isTrigger)
         {
             playerInRange = false;
-            contextOff.Raise();
+            context.Raise();
             dialogBox.SetActive(false);
         }
     }

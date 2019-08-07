@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public PlayerState currentState;
     public float moveSpeed;
     public FloatValue currentHealth;
+    public Inventory playerInventory;
+    public SpriteRenderer receivedItemSprite;
     public static bool isFacingUp; //used by ReadableObjects to check if player is facing towards the Sign/Character/etc
     private Rigidbody2D myRigidbody;
     private Vector3 movementInput;
@@ -39,6 +41,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (currentState == PlayerState.interact)
+        {
+            return;
+        }
         movementInput = Vector3.zero;
         movementInput = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (Input.GetButtonDown("attack") 
@@ -60,7 +66,30 @@ public class PlayerMovement : MonoBehaviour
         yield return null;
         animator.SetBool("attacking", false);
         yield return new WaitForSeconds(.3f);
-        currentState = PlayerState.walk;
+        if (currentState != PlayerState.interact)
+        {
+            currentState = PlayerState.walk;
+        }
+    }
+
+    public void RaiseItem()
+    {
+        if (playerInventory.currentItem != null)
+        {
+            if (currentState != PlayerState.interact)
+            {
+                animator.SetBool("receiveItem", true);
+                currentState = PlayerState.interact;
+                receivedItemSprite.sprite = playerInventory.currentItem.itemSprite;
+            }
+            else
+            {
+                animator.SetBool("receiveItem", false);
+                currentState = PlayerState.idle;
+                receivedItemSprite.sprite = null;
+            }
+        }
+        
     }
 
     void UpdateAnimationAndMove()

@@ -4865,7 +4865,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7136493348402949915, guid: 1839bce2fb27df24ba4023696be99169,
         type: 3}
-    m_RemovedComponents: []
+    - target: {fileID: 4508078143007286372, guid: 847ab79d03b651244a8b67d9d3f99d51,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.14769804
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508078143007286372, guid: 847ab79d03b651244a8b67d9d3f99d51,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.2953961
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4508078143156585990, guid: 847ab79d03b651244a8b67d9d3f99d51, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 847ab79d03b651244a8b67d9d3f99d51, type: 3}
 --- !u!1 &756321464 stripped
 GameObject:
@@ -4885,8 +4896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27e373b8567be024781ac96b081baaef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contextOn: {fileID: 11400000, guid: ac62e74fe48352f45945fa3e518e1b11, type: 2}
-  contextOff: {fileID: 11400000, guid: 34f7d431ca77f3b4bb3acaaea8515388, type: 2}
+  context: {fileID: 11400000, guid: ac62e74fe48352f45945fa3e518e1b11, type: 2}
   dialogBox: {fileID: 40466656}
   dialogText: {fileID: 1345302645}
   dialogToBeDisplayed: Just a weird painting...
